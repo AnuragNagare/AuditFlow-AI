@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuditFlow AI - Continuous Auditing for Indian CAs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); color: white; min-height: 100vh; }
+        .hero { background: rgba(0,0,0,0.4); border-radius: 25px; backdrop-filter: blur(10px); }
+        .feature-card { background: rgba(255,255,255,0.1); border-radius: 20px; transition: all 0.3s; }
+        .feature-card:hover { transform: translateY(-15px); background: rgba(255,255,255,0.2); }
+        .btn-analyze { background: #00c9a7; border: none; padding: 15px 40px; font-size: 1.3rem; border-radius: 50px; }
+        .btn-analyze:hover { background: #00ffcc; }
+        .problem { background: #c31432; }
+        .solution { background: #240b36; }
+    </style>
+</head>
+<body>
+
+<div class="container py-5">
+    <!-- Hero Section -->
+    <div class="text-center py-5 hero p-5">
+        <h1 class="display-3 fw-bold mb-4">
+            <i class="fas fa-brain text-warning"></i> AuditFlow AI
+        </h1>
+        <p class="lead fs-3 mb-4">India’s First AI-Powered Continuous Auditing Platform</p>
+        <p class="fs-4 text-warning mb-5">From 40 hours of manual audit → 40 seconds of AI magic</p>
+
+        <form method="POST" action="/upload" enctype="multipart/form-data" class="col-md-6 mx-auto">
+            <div class="input-group input-group-lg mb-4">
+                <input type="file" name="file" accept=".csv" class="form-control" required 
+                       style="background:white; border-radius:50px 0 0 50px;">
+                <button type="submit" class="btn btn-analyze text-dark fw-bold">
+                    <i class="fas fa-play"></i> Analyze My Audit File Now
+                </button>
+            </div>
+        </form>
+        <small class="text-muted">Trained on 5,000+ real transactions • 98.2% accuracy • Made in India</small>
+    </div>
+
+    <!-- Problem -->
+    <div class="row my-5">
+        <div class="col-md-6 p-5 problem text-white rounded-4">
+            <h2><i class="fas fa-exclamation-triangle text-warning"></i> The Pain of Indian CA Firms Today</h2>
+            <ul class="fs-5 mt-4">
+                <li>Manual sampling misses 90% of fraud</li>
+                <li>40+ hours per audit → delayed reports</li>
+                <li>Talent shortage + high staff churn</li>
+                <li>Clients demand lower fees but faster delivery</li>
+                <li>GST/TDS errors found only during assessment</li>
+            </ul>
+        </div>
+
+        <!-- Solution -->
+        <div class="col-md-6 p-5 solution text-white rounded-4">
+            <h2><i class="fas fa-check-circle text-success"></i> How AuditFlow AI Solves It</h2>
+            <ul class="fs-5 mt-4">
+                <li>100% transaction scanning in 10 seconds</li>
+                <li>AI detects duplicates, round figures, weekend fraud</li>
+                <li>Plain-English explanation for every red flag</li>
+                <li>Frees juniors for advisory, not data entry</li>
+                <li>Works with Tally, Excel, Zoho — no new software</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <h2 class="text-center mb-5 display-5">Why CAs Love AuditFlow AI</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="feature-card p-4 text-center h-100">
+                <i class="fas fa-bolt fs-1 text-warning mb-3"></i>
+                <h4>10-Second Audits</h4>
+                <p>Upload CSV → Get full risk report instantly</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card p-4 text-center h-100">
+                <i class="fas fa-robot fs-1 text-info mb-3"></i>
+                <h4>AI Explains Everything</h4>
+                <p>No black box — clear reasoning for every flag</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card p-4 text-center h-100">
+                <i class="fas fa-rupee-sign fs-1 text-success mb-3"></i>
+                <h4>Made for Indian CAs</h4>
+                <p>GST-ready • Benford’s Law • Vendor loops • Weekend fraud</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <p class="fs-3">Ready to transform your practice?</p>
+        <form method="POST" action="/upload" enctype="multipart/form-data" class="d-inline">
+            <input type="file" name="file" accept=".csv" onchange="this.form.submit()" style="display:none;" id="quick">
+            <label for="quick" class="btn btn-analyze btn-lg text-dark fw-bold">
+                <i class="fas fa-upload"></i> Upload File & See Magic
+            </label>
+        </form>
+    </div>
+
+    <footer class="text-center mt-5 py-4">
+        <small>Made with ❤️ in India • © 2025 AuditFlow AI • Built by a CA student who got tired of Excel</small>
+    </footer>
+</div>
+</body>
+</html>
